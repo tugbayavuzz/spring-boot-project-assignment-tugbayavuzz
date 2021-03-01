@@ -9,6 +9,8 @@ import java.io.Serializable;
 @Data
 public class StudentDTO implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @JsonIgnore
     private String name;
     private String lastName;

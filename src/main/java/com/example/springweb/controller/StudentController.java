@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/student")
+@RequestMapping("/api/v1")
 public class StudentController {
 
     @Autowired
@@ -46,7 +46,7 @@ public class StudentController {
         List<StudentDO> allStudents = studentService.getAllStudent();
         return new ResponseEntity<>(allStudents, HttpStatus.OK);
     }
-    @GetMapping(path = "/students{studentId}")
+    @GetMapping(path = "/students-delete/{studentId}")
     public ResponseEntity<String> deleteStudent(@PathVariable(value="studentId") Long studentId){
         studentService.deleteStudent(studentId);
         return new ResponseEntity<>("Student with id: " +studentId+ "is deleted.", HttpStatus.OK);
